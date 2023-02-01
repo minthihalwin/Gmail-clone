@@ -8,7 +8,7 @@ function App() {
    <div className='app'>
     <Header />
     <Sidebar />
-      <h1>Gmail</h1>
+    
    </div>
   );
 }
