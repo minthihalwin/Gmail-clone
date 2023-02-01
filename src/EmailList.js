@@ -9,10 +9,11 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardHideIcon from "@mui/icons-material/KeyboardHide";
 import SettingsIcon from "@mui/icons-material/Settings";
-import InboxIcon from '@mui/icons-material/Inbox';
+import InboxIcon from "@mui/icons-material/Inbox";
 import PeopleIcon from "@mui/icons-material/People";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
-import Section from './Section'
+import Section from "./Section";
+import EmailRow from "./EmailRow";
 
 function EmailList() {
   return (
@@ -52,7 +53,18 @@ function EmailList() {
       </div>
 
       <div className="emailList__list">
-        
+        <EmailRow
+          title="Min Thiha"
+          subject="Hey guys!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow
+          title="Min Thiha"
+          subject="Hey guys!"
+          description="This is a test"
+          time="10pm"
+        />
       </div>
     </div>
   );
