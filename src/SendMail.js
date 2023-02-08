@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { closeSendMessage } from "./features/mailSlice";
+import { serverTimestamp } from "firebase/firestore";
+import { addEmail } from "./util/Firebase_Controller";
 
 function SendMail() {
   const {
@@ -17,6 +19,19 @@ function SendMail() {
 
   const onSubmit = (formData) => {
     console.log(formData);
+    const newMail = {
+      to: formData.to,
+      subject: formData.subject,
+      message: formData.message,
+      timestamp: serverTimestamp(),
+    };
+    try {
+      addEmail(newMail);
+    } catch (err) {
+      alert(err.message);
+    }
+
+    dispatch(closeSendMessage());
   };
   return (
     <div className="sendMail">
@@ -29,9 +44,9 @@ function SendMail() {
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
-          type="text"
+          type="email"
           placeholder="To"
-          {...register("To", { required: true })}
+          {...register("to", { required: true })}
         />
         {errors.To?.type === "required" && (
           <p className="sendMail__error">To is Required!</p>
