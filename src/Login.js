@@ -2,7 +2,7 @@ import { Button } from '@mui/material';
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import "./Login.css"
-import { auth, provider, signinUser } from './util/Firebase_Controller';
+import { auth, provider } from './util/Firebase_Controller';
 import {login} from "./features/userSlice";
 import { signInWithPopup } from 'firebase/auth';
 

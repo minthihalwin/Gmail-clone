@@ -1,6 +1,6 @@
 import { addDoc, collection, getFirestore, orderBy, query } from "firebase/firestore";
 import { app } from "./Firebase_Config";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 
 const firestore = getFirestore(app);
